@@ -2,6 +2,16 @@
 /* Uncomment the code block below to see what happens */
 
 
-.container {
-  background-color: black;
-}
+
+  h1 { text-align: center; }
+  p.pic {text-align: center }
+  a.resume {position:fixed;
+            right:0;
+            top:0;
+            width: 40px;
+            border:0; }
+  body {background-color: lightgray;} 
+  
+  
+
+
