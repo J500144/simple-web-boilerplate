@@ -2,8 +2,41 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script type ="text/javascript"> 
+        function time()
+        {
+           var now = new Date();
+           var hours = now.getHours();
+           var minutes = now.getMinutes();
+           var seconds = now.getSeconds();
+           var light = "AM";
+           minutes = addZero(minutes);
+           seconds = addZero(seconds);
+           if(hours == 0)
+           {
+             h = 12;
+           }
+           if(hours > 12)
+           {
+             hours = hours - 12;
+             light = "PM";
+           }
+           var currentTime = hours + ':' + minutes + ':' + seconds + " " + light;
+           var myClock = document.getElementById('clock');
+           myClock.innerHTML = currentTime;
+           setTimeout(time,1000);
+        }
+        function addZero(i)
+        {
+          if (i < 10)
+          {
+            i = "0" + i;
+          }
+          return i;
+        }
+    </script>
   </head>
-  <body>
+  <body onload= "time()">
     <a class ="resume" href="Index2.html"><img src="images.png" style="width: 40px;height: 60pa";> </a> 
     <h1 style="color:darkgreen;"> Prayag Patel </h1> 
     <p class ="pic"> <img src="Prayag_Patel Headshot.jpg" style="width:200px;height:200px";> </p>
@@ -22,6 +55,9 @@
         <img src= "https://images.ctfassets.net/qe08557i7rmu/VMq_aSsAACSR5SZv/1af54cf2084f2b4247c0af5e3562b7d2/35128ee27de78fb4b706eda5852f01ee0ef141b4_sweetwater-420-pale.jpg?w=900" style="width:200px;height:200px";>
       </ul>
       </p>
+      
+      <p id = "clock" class = "clock"></p>
 
+      
   </body>
 </html>
